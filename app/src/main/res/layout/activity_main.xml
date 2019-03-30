@@ -10,14 +10,28 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_green_dark"
-        android:text=" @QuranApp .inc"
-        tools:layout_editor_absoluteY="532dp"
-        tools:layout_editor_absoluteX="141dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:text=" @QuranApp .inc"
+        android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="532dp"
+        />
+
+    <ImageView
+        android:layout_width="138dp"
+        android:layout_height="124dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="151dp"
+        android:drawable="@drawable/wmgggcp5l"
+        android:src="@drawable/wmgggcp5l" />
+
 
 </RelativeLayout>
