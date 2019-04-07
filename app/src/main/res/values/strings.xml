@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuranApp2</string>
+    <string name="search">Search</string>
+    <string name="quran">Quran</string>
+    <string name="account">Account</string>
+    <string name="home">Home</string>
 </resources>
