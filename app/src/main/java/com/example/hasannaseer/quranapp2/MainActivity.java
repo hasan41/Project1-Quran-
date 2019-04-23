@@ -10,6 +10,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         setContentView(R.layout.quiz_activity_main);
+        setContentView(R.layout.quiz_medium_layout);
+        setContentView(R.layout.quiz_hard_layout);
 
 
     }

@@ -32,7 +32,8 @@
         android:textColor="#707070"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="71dp" />
+        tools:layout_editor_absoluteY="71dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/text_view_highscore"
@@ -60,8 +61,10 @@
         android:layout_centerVertical="true"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/group_006"
-        tools:layout_editor_absoluteX="71dp" />
+        tools:ignore="MissingConstraints" />
 
 
 

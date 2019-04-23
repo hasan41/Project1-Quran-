@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.hasannaseer.quranapp2.MainActivity">
 
     <TextView
         android:id="@+id/text_view_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:freezesText="true"
         android:text="Score: 0"
-        android:textColor="#5F5D5D"/>
+        android:textColor="#5F5D5D" />
 
     <TextView
         android:id="@+id/text_view_question_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:layout_below="@id/text_view_score"
         android:freezesText="true"
         android:text="Question: 1/x"
@@ -27,24 +30,26 @@
         android:id="@+id/text_view_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:layout_below="@id/text_view_question_count"
         android:freezesText="true"
-        android:text="Category: "
+        android:text="Difficulty: "
         android:textColor="#5F5D5D" />
 
 
     <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:fontFamily="@font/poppins_bold"
         android:freezesText="true"
         android:text="00:30"
         android:textColor="@android:color/holo_blue_dark"
-        android:textSize="40sp"
+        android:textSize="41sp"
         android:textStyle="bold" />
     <!-- android:layout_alignBaseline="@+id/text_view_difficulty" -->
 
@@ -54,7 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/radio_group"
-        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"
         android:freezesText="true"
         android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
         android:textAlignment="center"
@@ -68,10 +74,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/ic_radio_button_checked_24px"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="246dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="205dp"
+        android:src="@drawable/ic_radio_button_checked_24px">
 
         <RadioButton
             android:id="@+id/radio_button2"
@@ -79,14 +85,6 @@
             android:layout_height="wrap_content"
             android:freezesText="true"
             android:text="OPTION 1" />
-
-        <RadioButton
-            android:id="@+id/radio_button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:freezesText="true"
-            android:text="OPTION 3"
-            />
 
         <RadioButton
             android:id="@+id/radio_button3"
@@ -98,19 +96,36 @@
             android:freezesText="true"
             android:text="OPTION 2" />
 
+        <RadioButton
+            android:id="@+id/radio_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:text="OPTION 3" />
+
     </RadioGroup>
 
-  <!--  <RelativeLayout
-        android:layout_width="207dp"
-        android:layout_height="133dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginLeft="94dp"
-        android:layout_marginTop="368dp"> -->
+    <Button
+        android:id="@+id/button_confirm_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="16dp"
+        android:freezesText="true"
+        android:text="Confirm" />
 
-    <ImageButton
+    <!--  <RelativeLayout
+          android:layout_width="207dp"
+          android:layout_height="133dp"
+          android:layout_alignParentStart="true"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginStart="94dp"
+          android:layout_marginLeft="94dp"
+          android:layout_marginTop="368dp"> -->
+
+  <!--  <ImageButton
         android:id="@+id/button_confirm_next"
         android:layout_width="257dp"
         android:layout_height="75dp"
@@ -126,21 +141,21 @@
         android:layout_marginRight="67dp"
         android:layout_marginBottom="104dp"
         android:freezesText="true"
-        android:src="@drawable/group_0009" />
-        <!--  android:layout_below="@id/radio_group" -->
+        android:src="@drawable/group_0009" /> -->
+       <!-- android:layout_below="@id/radio_group" -->
 
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="144dp"
+        android:layout_width="67dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:layout_marginBottom="15dp"
-        android:text="©Hasan Naseer"
+        android:layout_above="@+id/button_confirm_next"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginLeft="141dp"
+        android:layout_marginBottom="13dp"
+        android:text="©Quran"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="16sp" />
 </RelativeLayout>
