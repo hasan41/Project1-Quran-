@@ -2,6 +2,7 @@ package com.example.hasannaseer.quranapp2;
 
 
 import android.content.Context;
+import android.support.constraint.ConstraintLayout;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -23,8 +24,9 @@ public class SurahLoader {
 
     Map<String, Integer> surahNames = new HashMap<>();
 
-    protected void populate(Context className, LinearLayout surahLayout){
-        LinearLayout newLayout = surahLayout;
+    protected void populate(Context className, ConstraintLayout surahLayout){
+        ConstraintLayout newLayout = surahLayout;
+
 
         for (int x =0; x < surahNamesArray.length; x++){
             surahNames.put(surahNamesArray[x], surahLengthArray[x]);
