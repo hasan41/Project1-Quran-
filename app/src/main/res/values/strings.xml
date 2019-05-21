@@ -4,4 +4,5 @@
     <string name="quran">Quran</string>
     <string name="account">Account</string>
     <string name="home">Home</string>
+    <string name="select_a_surah">Select A Surah</string>
 </resources>
