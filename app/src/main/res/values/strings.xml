@@ -5,4 +5,5 @@
     <string name="account">Account</string>
     <string name="home">Home</string>
     <string name="select_a_surah">Select A Surah</string>
+    <string name="select_an_aya">Select An Aya</string>
 </resources>

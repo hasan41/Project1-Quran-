@@ -1,20 +1,17 @@
 package com.example.hasannaseer.quranapp2;
 
-import android.app.ActionBar;
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageButton surahSelectionButton;
+    ImageButton ayaSelectionButton;
     Context ctx;
 
     @Override
@@ -24,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         surahSelectionButton = findViewById(R.id.imageButton3);
+        ayaSelectionButton = findViewById(R.id.imageButton4);
         ctx = getApplication();
 
         surahSelectionButton.setOnClickListener(new View.OnClickListener() {
@@ -35,13 +33,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        ayaSelectionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(ctx, Aya_selection_view.class);
+                //TODO send over surah name in myIntent.putExtra()
+                startActivity(myIntent);
+            }
+        });
+
 
     }
 
-//    public void selectSurah(View view){
-//        Intent myIntent = new Intent(this, SurahSelectionView.class);
-//        startActivity(myIntent);
-//    }
 }
 
 

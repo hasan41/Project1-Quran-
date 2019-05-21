@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SurahSelectionView"
+        <activity
+            android:name=".SurahSelectionView"
+            android:theme="@style/AppTheme.SurahSelection" />
+        <activity android:name=".Aya_selection_view"
             android:theme="@style/AppTheme.SurahSelection"></activity>
     </application>
 
