@@ -6,6 +6,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -48,6 +49,8 @@ public class SurahSelectionView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent myIntent = new Intent(ctx, Aya_selection_view.class);
                 //TODO send over surah name in myIntent.putExtra()
+                myIntent.putExtra("surahName", ASHelper.surahNamesArray[position]);
+                Log.d(ASHelper.surahNamesArray[position], "This item has been clicked: ");
                 startActivity(myIntent);
             }
         });
