@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +19,10 @@
         <activity
             android:name=".SurahSelectionView"
             android:theme="@style/AppTheme.SurahSelection" />
-        <activity android:name=".Aya_selection_view"
-            android:theme="@style/AppTheme.SurahSelection"></activity>
+        <activity
+            android:name=".Aya_selection_view"
+            android:theme="@style/AppTheme.SurahSelection" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
