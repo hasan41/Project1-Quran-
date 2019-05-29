@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorPrimary">
 
     <LinearLayout
@@ -45,7 +46,33 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="2dp" />
+
+
+    <!-- <android.support.v4.widget.DrawerLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/side_menu"
+         tools:context=".MainActivity" >
+
+         <android.support.design.widget.NavigationView
+             app:headerLayout="@layout/header"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:background="@color/white"
+             app:itemTextColor="@color/colorPrimaryDark"
+             app:itemIconTint="@color/colorPrimaryDark"
+             app:menu="@menu/drawermenu"
+             android:gravity="start"
+             android:layout_gravity="start">
+
+         </android.support.design.widget.NavigationView>
+
+     </android.support.v4.widget.DrawerLayout> -->
 
 
 </RelativeLayout>
+

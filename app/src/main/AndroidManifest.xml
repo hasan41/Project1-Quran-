@@ -17,12 +17,27 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".SignupActivity" />
+
+        <!--
+            <activity android:name="com.example.hasannaseer.quranapp2.SignupActivity"
+                  android:configChanges="orientation|screenSize"/>
+        -->
+
+        <activity
             android:name=".SurahSelectionView"
             android:theme="@style/AppTheme.SurahSelection" />
         <activity
             android:name=".Aya_selection_view"
             android:theme="@style/AppTheme.SurahSelection" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <!--
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignupActivity"> </activity>
+        -->
+        <activity android:name=".menubar"></activity>
     </application>
 
 </manifest>

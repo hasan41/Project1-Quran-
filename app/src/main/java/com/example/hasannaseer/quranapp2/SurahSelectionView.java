@@ -27,7 +27,6 @@ public class SurahSelectionView extends AppCompatActivity {
 
         surahList = findViewById(R.id.surahSelectionList);
 
-
         //Getting Dimensions
         DisplayMetrics DM = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(DM);

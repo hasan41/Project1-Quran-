@@ -2,6 +2,7 @@
     <android.support.constraint.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -9,7 +10,7 @@
     <ImageButton
         android:id="@+id/imageButton12"
         style="@android:style/Widget.DeviceDefault.Light.ImageButton"
-        android:layout_width="wrap_content"
+        android:layout_width="112dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:background="@android:color/transparent"
@@ -17,6 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:srcCompat="@drawable/group_14" />
 
         <ImageButton
@@ -28,6 +31,9 @@
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+
             app:srcCompat="@drawable/group_16_1" />
 
         <ImageButton
@@ -37,6 +43,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginLeft="32dp"
             android:background="@android:color/transparent"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/group_16" />
