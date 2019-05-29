@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen"/>
         <activity android:name=".QuranHome"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
@@ -21,11 +22,26 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity2"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".SignupActivity" />
+
+        <!--
+            <activity android:name="com.example.hasannaseer.quranapp2.SignupActivity"
+                  android:configChanges="orientation|screenSize"/>
+        -->
+
+        <activity
             android:name=".SurahSelectionView"
             android:theme="@style/AppTheme.SurahSelection" />
         <activity
             android:name=".Aya_selection_view"
             android:theme="@style/AppTheme.SurahSelection" />
+        <!--
+        <activity android:name=".LoginActivity2" />
+        <activity android:name=".SignupActivity"> </activity>
+        -->
+        <activity android:name=".menubar"></activity>
     </application>
 
 </manifest>
