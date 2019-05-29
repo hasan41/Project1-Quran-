@@ -3,7 +3,6 @@ package com.example.hasannaseer.quranapp2;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +16,8 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity {
-    private static final String TAG = "LoginActivity";
+public class LoginActivity2 extends AppCompatActivity {
+    private static final String TAG = "LoginActivity2";
     private static final int REQUEST_SIGNUP = 0;
    // TextView login;
     Context ctx;
@@ -35,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login2);
 
         back = findViewById(R.id.text_back);
         //login = findViewById(R.id.link_signup);
@@ -55,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
        /* login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity (new Intent(LoginActivity.this, SignupActivity.class));
+               startActivity (new Intent(LoginActivity2.this, SignupActivity.class));
             }
         }); */
 
@@ -89,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
 
         _loginButton.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
+        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity2.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");

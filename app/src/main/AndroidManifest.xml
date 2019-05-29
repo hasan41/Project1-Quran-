@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginActivity2"
             android:configChanges="orientation|screenSize"
             android:parentActivityName=".SignupActivity" />
 
@@ -34,7 +34,7 @@
             android:theme="@style/AppTheme.SurahSelection" />
         <activity android:name=".MainActivity" />
         <!--
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity2" />
         <activity android:name=".SignupActivity"> </activity>
         -->
         <activity android:name=".menubar"></activity>
