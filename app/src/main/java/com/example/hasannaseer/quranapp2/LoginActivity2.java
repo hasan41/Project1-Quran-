@@ -3,6 +3,7 @@ package com.example.hasannaseer.quranapp2;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,29 +14,37 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity2 extends AppCompatActivity {
     private static final String TAG = "LoginActivity2";
     private static final int REQUEST_SIGNUP = 0;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
+    private ProgressDialog progressDialog;
+
    // TextView login;
     Context ctx;
     TextView back;
 
-    @BindView(R.id.input_email)
-    EditText _emailText;
+    @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_password) EditText _passwordText;
-    @BindView(R.id.btn_login)
-    ImageButton _loginButton;
-    @BindView(R.id.link_signup)
-    TextView _signupLink;
+    @BindView(R.id.btn_login) ImageButton _loginButton;
+    @BindView(R.id.link_signup) TextView _signupLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
-
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
         back = findViewById(R.id.text_back);
         //login = findViewById(R.id.link_signup);
         ctx = getApplication();
@@ -74,40 +83,33 @@ public class LoginActivity2 extends AppCompatActivity {
                 // Start the Signup activity
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
+                //startActivity(intent);
             }
         });
     }
 
     public void login() {
-        Log.d(TAG, "Login");
-
         if (!validate()) {
             onLoginFailed();
+            _loginButton.setEnabled(true);
             return;
+        }else{
+              progressDialog = new ProgressDialog(LoginActivity2.this,
+                    R.style.AppTheme_Dark_Dialog);
+            progressDialog.setIndeterminate(true);
+
+
+            progressDialog.setMessage("Authenticating...");
+            progressDialog.show();
+
+            String email = _emailText.getText().toString();
+            String password = _passwordText.getText().toString();
+            LoginUser(email,password);
+            onLoginSuccess();
+
         }
 
-        _loginButton.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity2.this,
-                R.style.AppTheme_Dark_Dialog);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Authenticating...");
-        progressDialog.show();
-
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
-
-        // TODO: Implement your own authentication logic here.
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
     }
 
 
@@ -131,7 +133,6 @@ public class LoginActivity2 extends AppCompatActivity {
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
-        finish();
     }
 
     public void onLoginFailed() {
@@ -141,25 +142,66 @@ public class LoginActivity2 extends AppCompatActivity {
     }
 
     public boolean validate() {
-        boolean valid = true;
+        boolean valid = false;
 
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("Enter a valid email address");
+        if (email.isEmpty()) {
+            _emailText.setError("Enter an  email address");
             valid = false;
+
         } else {
+            valid = true;
             _emailText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("Between 4 and 10 alphanumeric characters");
+        if (password.isEmpty()) {
+            _passwordText.setError("Enter a  Password");
             valid = false;
         } else {
+            valid = true;
             _passwordText.setError(null);
         }
 
         return valid;
+    }
+
+    public void LoginUser(String Email, String Password){
+
+        Log.d(TAG, "Login method called");
+        mAuth.signInWithEmailAndPassword(Email, Password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+
+                                if (task.isSuccessful()) {
+                                    currentUser = mAuth.getCurrentUser();
+                                    _loginButton.setEnabled(true);
+
+                                    Log.d(TAG, "Now Logged In");
+
+                                    //finish();
+                                    startActivity(new Intent(getApplicationContext(),
+                                            QuranHome.class));
+
+
+                                } else {
+                                        validate();
+                                        Toast.makeText(LoginActivity2.this, "No Account with that details found!",
+
+                                                Toast.LENGTH_SHORT).show();
+                                    progressDialog.dismiss();
+
+
+
+                                }
+
+
+                    }
+                });
+
     }
 }
